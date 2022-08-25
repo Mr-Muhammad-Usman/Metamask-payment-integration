@@ -44,12 +44,15 @@
 
 <div class="row justify-content-center">
     <div class="col-lg-4 text-center">
+
         <div class="form-group">
-            @csrf
+
             <h3>Enter Amount Here</h3>
             <input type="text" class="form-control" name="amount" id="inp_amount" aria-describedby="helpId"
                    placeholder="Enter Amount In USD">
         </div>
+        <div id="message" ></div>
+        <br>
         <button type="button" onClick="startProcess()" class="btn btn-success">Pay Now</button>
     </div>
 </div>
@@ -189,9 +192,11 @@
                 amount: amount,
             },
             success: function (response) {
-                console.log("Payment Done");
-                // reload page after success
+                // console.log("Payment Done");
                 window.location.reload();
+                document.getElementById('message').innerHTML = 'Payment Done.';
+                // reload page after success
+
             }
         });
     }
