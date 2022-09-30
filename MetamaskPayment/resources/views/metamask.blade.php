@@ -192,8 +192,8 @@
                 amount: amount,
             },
             success: function (response) {
-                // console.log("Payment Done");
-                window.location.reload();
+                console.log(response);
+                // window.location.reload();
                 document.getElementById('message').innerHTML = 'Payment Done.';
                 // reload page after success
 
